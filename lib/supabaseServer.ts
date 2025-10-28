@@ -1,10 +1,12 @@
-import { createServerClient } from '@supabase/ssr';
+// lib/supabaseServer.ts
 import { cookies } from 'next/headers';
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
 
-export const supabaseServer = () => {
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    { cookies }
-  );
-};
+/**
+ * Cliente de Supabase para ROUTE HANDLERS (App Router),
+ * leyendo/escribiendo la cookie de sesión del usuario.
+ * Requiere tener `middleware.ts` con createMiddlewareClient.
+ */
+export function supabaseServer() {
+  return createRouteHandlerClient({ cookies });
+}

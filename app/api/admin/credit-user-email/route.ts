@@ -1,10 +1,14 @@
-// app/api/admin/mint/route.ts
+// app/api/admin/credit-user-email/route.ts
 import { NextResponse } from 'next/server';
 import { supabaseServer } from '@/lib/supabaseServer';
 
 export async function POST(req: Request) {
   try {
-    const { amount, note } = await req.json();
+    const { player_email, amount, note } = await req.json();
+
+    if (!player_email || typeof player_email !== 'string') {
+      return NextResponse.json({ error: 'Falta player_email' }, { status: 400 });
+    }
 
     const nAmount = Number(amount);
     if (!nAmount || nAmount <= 0) {
@@ -29,14 +33,23 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Acceso restringido a ADMIN' }, { status: 403 });
     }
 
-    const p_idem = `mint-${Date.now()}`;
+    const p_idem = `admin-credit-user-${Date.now()}`;
 
-    // RPC: fn_admin_mint(p_amount numeric, p_note text, p_idem text)
-    const { data, error } = await supabase.rpc('fn_admin_mint', {
+    // RPC recomendado: fn_admin_credit_to_email(player_email text, p_amount numeric, p_note text, p_idem text)
+    const { data, error } = await supabase.rpc('fn_admin_credit_to_email', {
+      player_email,
       p_amount: nAmount,
       p_note: note ?? '',
       p_idem,
     });
+
+    // Si aún no tienes ese RPC y solo existe el del cajero, descomenta esto y comenta el bloque de arriba:
+    // const { data, error } = await supabase.rpc('fn_cashier_credit_to_email', {
+    //   p_player_email: player_email,
+    //   p_amount: nAmount,
+    //   p_note: note ?? '',
+    //   p_idem,
+    // });
 
     if (error) return NextResponse.json({ error: error.message }, { status: 400 });
 

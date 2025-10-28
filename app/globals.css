@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-gray-900 text-gray-100;
+/* Reset base */
+html, body {
+  @apply text-gray-100;
+  min-height: 100%;
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(79,70,229,0.15), transparent),
+              radial-gradient(1000px 500px at 90% -20%, rgba(6,182,212,0.12), transparent),
+              #0a0f1a;
+}
+
+/* Scrollbar elegante */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #06b6d4); /* azul → cyan */
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f1a;
+}
+
+/* Selección de texto */
+::selection {
+  background: rgba(6,182,212,0.25);
+  color: #ffffff;
 }
