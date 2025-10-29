@@ -4,17 +4,17 @@ import Link from 'next/link';
 import Sidebar from '../components/Sidebar';
 
 /**
- * Paleta & presets RasPay (neón elegante)
+ * Paleta & presets JokerPay (neón elegante)
  */
 const theme = {
   heroBg:
-    'radial-gradient(1200px 600px at 15% -10%, rgba(59,130,246,0.18), transparent), radial-gradient(900px 500px at 90% -20%, rgba(236,72,153,0.16), transparent), #0a0f1a',
-  kpiA: 'text-cyan-300 drop-shadow-[0_0_14px_rgba(34,211,238,0.25)]',
+    'radial-gradient(1200px 600px at 15% -10%, rgba(147,51,234,0.18), transparent), radial-gradient(900px 500px at 90% -20%, rgba(236,72,153,0.16), transparent), #0a0f1a',
+  kpiA: 'text-violet-300 drop-shadow-[0_0_14px_rgba(168,85,247,0.25)]',
   kpiB: 'text-fuchsia-300 drop-shadow-[0_0_14px_rgba(217,70,239,0.25)]',
-  ringMain: 'ring-cyan-500/20 hover:ring-cyan-400/30',
+  ringMain: 'ring-violet-500/20 hover:ring-violet-400/30',
   ringAlt: 'ring-fuchsia-500/20 hover:ring-fuchsia-400/30',
   btnPrimary:
-    'bg-gradient-to-r from-cyan-500 to-sky-500 hover:from-cyan-400 hover:to-sky-400 text-black shadow-[0_8px_30px_-10px_rgba(14,165,233,0.55)]',
+    'bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-400 hover:to-purple-400 text-black shadow-[0_8px_30px_-10px_rgba(139,92,246,0.55)]',
   btnSecondary:
     'bg-gradient-to-r from-fuchsia-500 to-pink-500 hover:from-fuchsia-400 hover:to-pink-400 text-black shadow-[0_8px_30px_-10px_rgba(236,72,153,0.55)]',
 };
@@ -39,17 +39,17 @@ export default function Home() {
                 {/* Copy principal */}
                 <div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wider text-gray-300">
-                    <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(34,211,238,0.7)]" /> RasPay
+                    <span className="h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_14px_rgba(139,92,246,0.7)]" /> JokerPay
                     Secure Wallet · Provably Fair
                   </div>
 
                   <h1 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                    La nueva élite del <span className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">gaming online</span>
+                    La nueva era del <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">casino online</span>
                   </h1>
 
                   <p className="mt-3 text-[15px] md:text-base text-gray-300/90 max-w-xl">
-                    Velocidad absurda, UX de otro planeta y un sistema <em>provably fair</em> respaldado por
-                    la billetera segura de <strong>RasPay</strong>.
+                    Velocidad absurda, experiencia premium y un sistema <em>provably fair</em> impulsado por
+                    la billetera segura de <strong>JokerPay</strong>.
                   </p>
 
                   <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -57,13 +57,13 @@ export default function Home() {
                       href="/games"
                       className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-all ${theme.btnPrimary}`}
                     >
-                      🚀 Entrar al Casino
+                      🎰 Entrar al Casino
                     </Link>
                     <Link
                       href="/sports"
                       className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-all ${theme.btnSecondary}`}
                     >
-                      ⚡ Sports Betting
+                      ⚽ Sports Betting
                     </Link>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ export default function Home() {
                   />
                 </div>
                 <button
-                  className="rounded-xl text-black text-sm font-semibold transition-all px-4 bg-gradient-to-r from-cyan-500 to-fuchsia-500 hover:from-cyan-400 hover:to-fuchsia-400 shadow-[0_8px_30px_-10px_rgba(99,102,241,0.55)]"
+                  className="rounded-xl text-black text-sm font-semibold transition-all px-4 bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-400 hover:to-fuchsia-400 shadow-[0_8px_30px_-10px_rgba(99,102,241,0.55)]"
                 >
                   Buscar
                 </button>
@@ -109,8 +109,8 @@ export default function Home() {
         <section className="px-6 py-10">
           <div className="max-w-[1200px] mx-auto">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-xl md:text-2xl font-semibold">🔥 Trending Games</h2>
-              <Link href="/games" className="text-sm text-cyan-300 hover:text-cyan-200 transition-colors">
+              <h2 className="text-xl md:text-2xl font-semibold">🔥 Juegos Populares</h2>
+              <Link href="/games" className="text-sm text-violet-300 hover:text-violet-200 transition-colors">
                 Ver todos →
               </Link>
             </div>

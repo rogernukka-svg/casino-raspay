@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { supabaseBrowser } from '@/lib/supabaseBrowser';
-import Brand from '@/components/Brand';
 
 type Role = 'ADMIN' | 'CASHIER' | 'USER';
 
@@ -59,12 +58,21 @@ export default function Navbar() {
         className="
           w-full border-b border-white/10 backdrop-blur-xl
           bg-[#0b1220]/75
-          [background-image:radial-gradient(60%_40%_at_0%_-20%,rgba(59,130,246,.18),transparent_60%),radial-gradient(60%_40%_at_100%_-20%,rgba(139,92,246,.18),transparent_60%)]
+          [background-image:radial-gradient(60%_40%_at_0%_-20%,rgba(168,85,247,.18),transparent_60%),radial-gradient(60%_40%_at_100%_-20%,rgba(236,72,153,.18),transparent_60%)]
         "
       >
         <nav className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          {/* Marca RasPay */}
-          <Brand />
+          {/* 🔥 Marca JokerPay */}
+          <Link href="/" className="flex items-center gap-2 select-none">
+            <div className="h-3 w-3 rounded-full bg-fuchsia-400 shadow-[0_0_10px_rgba(236,72,153,0.8)]" />
+            <h1 className="text-xl font-extrabold tracking-tight">
+              <span className="text-white">Joker</span>
+              <span className="text-fuchsia-400 drop-shadow-[0_0_6px_rgba(236,72,153,0.6)]">Pay</span>
+            </h1>
+            <span className="ml-2 text-[11px] tracking-wider text-gray-400 border border-white/10 px-2 py-[1px] rounded-full uppercase">
+              Secure • Provably Fair
+            </span>
+          </Link>
 
           {/* Links lado derecho */}
           <div className="flex items-center gap-5 text-sm font-medium">
@@ -77,7 +85,6 @@ export default function Navbar() {
             </Link>
 
             {loading ? (
-              // placeholders para no desmontar nodos durante el fetch
               <>
                 <span className="h-6 w-14 rounded bg-white/10 animate-pulse" />
                 <span className="h-6 w-24 rounded bg-white/10 animate-pulse" />
